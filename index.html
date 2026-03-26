@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carolina BuySide | Home</title>
+    <meta
+      name="description"
+      content="Carolina BuySide is a student organization at UNC focused on private equity, venture capital, investing judgment, and career preparation."
+    />
+    <style>
+      :root {
+        --navy: #13294b;
+        --accent: #4a90d9;
+        --slate: #f0f3f7;
+        --white: #ffffff;
+        --text: #1a1a2e;
+        --muted: #4b5568;
+        --line: #d6dce8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: var(--white);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: Georgia, serif;
+        color: var(--navy);
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1440px, calc(100% - 56px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .header-inner {
+        min-height: 94px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: cover;
+      }
+
+      .brand-title {
+        font-family: Georgia, serif;
+        font-size: 1.8rem;
+        line-height: 0.95;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      .brand-subtitle {
+        margin-top: 3px;
+        font-size: 0.78rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        color: var(--muted);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 700;
+      }
+
+      .site-nav a {
+        padding-bottom: 6px;
+        border-bottom: 1px solid transparent;
+        color: #23364f;
+      }
+
+      .site-nav a:hover,
+      .site-nav a.active {
+        border-color: var(--accent);
+      }
+
+      .site-nav .join-cta {
+        border: 1px solid var(--navy);
+        background: var(--navy);
+        color: var(--white);
+        padding: 9px 14px;
+        border-radius: 6px;
+      }
+
+      .site-nav .join-cta:hover,
+      .site-nav .join-cta.active {
+        border-color: var(--accent);
+        background: var(--accent);
+      }
+
+      main {
+        padding: 34px 0 0;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 600px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(19, 41, 75, 0.9);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        padding: 20px;
+        color: var(--white);
+      }
+
+      .eyebrow {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .hero h1 {
+        color: var(--white);
+        font-size: clamp(2.2rem, 4.6vw, 4rem);
+        margin: 14px 0 14px;
+      }
+
+      .hero p {
+        color: #ecf2fa;
+        font-size: 1.08rem;
+      }
+
+      .btn-row {
+        margin-top: 28px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        background: var(--navy);
+        color: var(--white);
+        border-color: var(--navy);
+      }
+
+      .btn-outline-light {
+        border-color: var(--white);
+        color: var(--white);
+      }
+
+      .section {
+        padding: 58px 0 0;
+      }
+
+      .section-head {
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        margin-bottom: 22px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.8rem, 3.2vw, 2.9rem);
+        margin-top: 8px;
+      }
+
+      .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .glance-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .glance-card {
+        border: 1px solid #dce4ef;
+        background: var(--slate);
+        padding: 22px;
+      }
+
+      .glance-card .icon {
+        font-size: 1.45rem;
+        margin-bottom: 10px;
+      }
+
+      .glance-card h3 {
+        font-size: 1.45rem;
+        margin-bottom: 8px;
+      }
+
+      .inside-card {
+        background: var(--white);
+        border-left: 4px solid var(--accent);
+        border-top: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        padding: 22px 20px;
+      }
+
+      .inside-card .num {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+
+      .rhythm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .rhythm-card {
+        background: var(--slate);
+        padding: 22px;
+        border: none;
+      }
+
+      .rhythm-card .num {
+        font-family: Georgia, serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .feature-copy {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+
+      .feature-copy h2 {
+        font-size: clamp(1.7rem, 2.7vw, 2.6rem);
+        margin-bottom: 12px;
+      }
+
+      .market-points {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .market-point {
+        border: 1px solid var(--line);
+        background: #fafcfe;
+        padding: 14px 16px;
+      }
+
+      .market-point h3 {
+        font-size: 1.02rem;
+        margin-bottom: 6px;
+      }
+
+      .market-point p {
+        color: #31435b;
+        font-size: 0.95rem;
+      }
+
+      .feature-media {
+        display: flex;
+        justify-content: center;
+        padding-top: 34px;
+      }
+
+      .feature-media img {
+        width: min(100%, 420px);
+      }
+
+      .cta-band {
+        border-top: 1px solid var(--line);
+        padding-top: 22px;
+      }
+
+      .cta-band h2 {
+        font-size: clamp(1.7rem, 2.7vw, 2.4rem);
+        margin-bottom: 10px;
+      }
+
+      .site-footer {
+        margin-top: 80px;
+        background: radial-gradient(120% 140% at 50% 0%, #1a3a66 0%, #0f2340 48%, #0b1a30 100%);
+        color: var(--white);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-top {
+        padding: 46px 0 28px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .footer-top h3 {
+        color: var(--white);
+        font-size: 2rem;
+        margin-bottom: 8px;
+        letter-spacing: 0.01em;
+      }
+
+      .footer-tag {
+        color: #d6e3f6;
+        max-width: 34ch;
+        line-height: 1.5;
+        font-size: 1.03rem;
+      }
+
+      .footer-brand {
+        max-width: 430px;
+      }
+
+      .footer-links {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+      }
+
+      .footer-links a {
+        color: #dbe7f8;
+        padding: 2px 0;
+        border-bottom: 1px solid transparent;
+        width: fit-content;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+        border-color: rgba(219, 231, 248, 0.65);
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-self: center;
+        margin-top: 6px;
+        justify-self: center;
+        min-width: max-content;
+      }
+
+      .footer-nav a {
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        color: #e2ebf9;
+        border: none;
+        padding: 4px 0;
+        position: relative;
+      }
+
+      .footer-nav a:hover {
+        color: var(--white);
+      }
+
+      .footer-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: rgba(226, 235, 249, 0.6);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease;
+      }
+
+      .footer-nav a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .footer-contact {
+        justify-items: end;
+      }
+
+      .linkedin-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #e2ebf9;
+        font-weight: 700;
+      }
+
+      .linkedin-icon {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(226, 235, 249, 0.7);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.24);
+        padding: 16px 0 22px;
+        font-size: 0.88rem;
+        color: #b6c7de;
+        text-align: center;
+      }
+
+      .footer-subtag {
+        margin-top: 14px;
+        color: #c9d6ea;
+        font-size: 0.83rem;
+        letter-spacing: 0.015em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border: 1px solid rgba(201, 214, 234, 0.34);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .footer-subtag::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: min(100%, calc(100% - 24px));
+        }
+
+        .header-inner {
+          min-height: auto;
+          padding: 12px 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .site-nav {
+          flex-wrap: wrap;
+          gap: 14px;
+        }
+
+        .cards-3,
+        .market-points,
+        .rhythm-grid,
+        .two-col,
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+          text-align: center;
+          gap: 22px;
+        }
+
+        .footer-brand {
+          margin: 0 auto;
+        }
+
+        .footer-nav {
+          justify-content: center;
+        }
+
+        .footer-contact {
+          justify-items: center;
+        }
+
+        .hero {
+          min-height: 520px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Carolina BuySide home">
+          <img src="assets/carolina-buyside-logo-final.png" alt="Carolina BuySide logo" />
+          <div>
+            <div class="brand-title">Carolina BuySide</div>
+            <div class="brand-subtitle">UNC Student Run Buy-Side Organization</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="sectors.html">Sectors</a>
+          <a href="team.html">Team</a>
+          <a class="join-cta" href="join.html">Join</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <!-- Replace with real asset: Carolina campus or finance background -->
+        <img
+          src="assets/photos/home-hero-cover.jpeg"
+          alt="Carolina campus or finance background"
+        />
+        <div class="hero-content container">
+          <div class="eyebrow">CAROLINA BUYSIDE</div>
+          <h1>A More Formal Home for Carolina's Student BuySide Community.</h1>
+          <p>
+            Carolina BuySide is a student-led organization at UNC-Chapel Hill built around rigorous
+            investing education, professional development, and preparation for careers across
+            buy-side paths. We explicitly cover private equity (PE), growth equity (GE), and venture
+            capital (VC), with members building conviction through research, stock pitches, sector
+            work, and collaborative discussion.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="about.html">Explore the Club</a>
+            <a class="btn btn-outline-light" href="sectors.html">View Sectors</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">At A Glance</div>
+            <h2>A student organization designed to turn interest into disciplined judgment.</h2>
+          </div>
+          <div class="glance-grid">
+            <article class="glance-card">
+              <h3>Research</h3>
+              <p>
+                Members prepare and present investment views through recurring stock pitch work and
+                practical sector-level analysis.
+              </p>
+            </article>
+            <article class="glance-card">
+              <h3>Pitch</h3>
+              <p>
+                The club develops communication and conviction by testing ideas in structured,
+                feedback-driven discussion settings.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Inside The Organization</div>
+            <h2>Structured for students who want serious exposure to investing work.</h2>
+          </div>
+          <div class="cards-3">
+            <article class="inside-card">
+              <div class="num">01</div>
+              <h3>Learn by pitching</h3>
+              <p>
+                Members practice how to evaluate businesses, build a thesis, and communicate an
+                investment view through recurring pitch and discussion work.
+              </p>
+            </article>
+            <article class="inside-card">
+              <div class="num">02</div>
+              <h3>Develop sector perspective</h3>
+              <p>
+                Sector teams create a more structured way to follow industries, compare businesses,
+                and generate investment ideas over time.
+              </p>
+            </article>
+            <article class="inside-card">
+              <div class="num">03</div>
+              <h3>Grow with a cohort</h3>
+              <p>
+                Carolina BuySide gives members a peer group that pushes standards upward and makes
+                the learning process more collaborative and less opaque.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Semester Rhythm</div>
+            <h2>Training, research, discussion, and exposure to the people already doing the work.</h2>
+          </div>
+          <div class="rhythm-grid">
+            <article class="rhythm-card">
+              <div class="num">01</div>
+              <h3>Onboarding</h3>
+              <p>Introduce members to frameworks, club expectations, and private markets basics.</p>
+            </article>
+            <article class="rhythm-card">
+              <div class="num">02</div>
+              <h3>Research and stock pitches</h3>
+              <p>Practice sourcing ideas, pressure-testing theses, and presenting conviction.</p>
+            </article>
+            <article class="rhythm-card">
+              <div class="num">03</div>
+              <h3>Career programming</h3>
+              <p>Connect students with alumni, operators, and recruiting-focused guidance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-col">
+          <div class="feature-copy">
+            <div class="eyebrow">Market Context</div>
+            <h2>Built in the spirit of professional investing institutions.</h2>
+            <p>
+              Carolina BuySide mirrors a more institutional approach to investing work through sector
+              coverage, stock pitches, and disciplined research discussion in a collaborative student
+              setting.
+            </p>
+            <div class="market-points">
+              <article class="market-point">
+                <h3>Full BuySide Coverage</h3>
+                <p>
+                  The club is intentionally broad across PE, GE, and VC so members build a complete
+                  view of private-market opportunities and decision frameworks.
+                </p>
+              </article>
+              <article class="market-point">
+                <h3>Research Discipline</h3>
+                <p>
+                  Members are trained to frame a thesis, test assumptions, and defend conclusions
+                  with evidence rather than surface-level market narratives.
+                </p>
+              </article>
+              <article class="market-point">
+                <h3>Pitch Communication</h3>
+                <p>
+                  Structured pitch sessions develop the ability to communicate clearly under
+                  pressure, receive feedback, and iterate quickly.
+                </p>
+              </article>
+              <article class="market-point">
+                <h3>Long-Term Development</h3>
+                <p>
+                  A semester-to-semester model helps members compound judgment over time through
+                  repeated sector work, collaboration, and practical execution.
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="feature-media">
+            <!-- Replace with real asset: finance/campus photo -->
+            <img
+              src="assets/photos/home-market-globe.webp"
+              alt="Market Context"
+            />
+            <!-- Replace with real finance/campus photo -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container cta-band">
+          <div class="eyebrow">Next Step</div>
+          <h2>Explore the organization, sector coverage, and the team behind Carolina BuySide.</h2>
+          <p>
+            Carolina BuySide brings together students interested in private markets, sector work, and
+            long-term investing careers through a platform built for preparation, rigor, and
+            community across PE, GE, and VC pathways.
+          </p>
+          <div class="btn-row" style="justify-content:flex-start;">
+            <a class="btn btn-primary" href="sectors.html">Explore Sectors</a>
+            <a class="btn" style="border:1px solid var(--navy); color:var(--navy);" href="team.html">Meet the Team</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <h3>Carolina BuySide</h3>
+          <p class="footer-tag">Carolina BuySide at UNC-Chapel Hill</p>
+          <p class="footer-subtag">Club Partner with <a href="https://www.perplexity.ai/" target="_blank" rel="noreferrer"><strong>Perplexity</strong></a></p>
+        </div>
+        <div class="footer-links footer-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="sectors.html">Sectors</a>
+          <a href="team.html">Team</a>
+          <a href="join.html">Join</a>
+        </div>
+        <div class="footer-links footer-contact">
+          <a
+            class="linkedin-link"
+            href="https://www.linkedin.com/company/carolinabuyside/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="linkedin-icon">in</span>
+            LinkedIn
+          </a>
+          <a href="mailto:carolinabuyside@gmail.com">carolinabuyside@gmail.com</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <div>© 2026 Carolina BuySide. Built for recruiting and programming.</div>
+      </div>
+    </footer>
+  </body>
+</html>

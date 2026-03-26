@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carolina BuySide | Team</title>
+    <meta
+      name="description"
+      content="Meet the leadership structure for Carolina BuySide and view the current executive team."
+    />
+    <style>
+      :root {
+        --navy: #13294b;
+        --accent: #4a90d9;
+        --slate: #f0f3f7;
+        --white: #ffffff;
+        --text: #1a1a2e;
+        --muted: #4b5568;
+        --line: #d6dce8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: var(--white);
+      }
+      h1, h2, h3 { margin: 0; font-family: Georgia, serif; color: var(--navy); }
+      p { margin: 0; line-height: 1.65; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1440px, calc(100% - 56px)); margin: 0 auto; }
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .header-inner {
+        min-height: 94px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand { display: flex; align-items: center; gap: 14px; }
+      .brand img { width: 58px; height: 58px; object-fit: cover; }
+      .brand-title {
+        font-family: Georgia, serif;
+        font-size: 1.8rem;
+        line-height: 0.95;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .brand-subtitle {
+        margin-top: 3px;
+        font-size: 0.78rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        color: var(--muted);
+      }
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 700;
+      }
+      .site-nav a {
+        padding-bottom: 6px;
+        border-bottom: 1px solid transparent;
+        color: #23364f;
+      }
+      .site-nav a:hover, .site-nav a.active { border-color: var(--accent); }
+      .site-nav .join-cta {
+        border: 1px solid var(--navy);
+        background: var(--navy);
+        color: var(--white);
+        padding: 9px 14px;
+        border-radius: 6px;
+      }
+      .site-nav .join-cta:hover, .site-nav .join-cta.active {
+        border-color: var(--accent);
+        background: var(--accent);
+      }
+      main { padding: 34px 0 0; }
+      .section { padding: 58px 0 0; }
+      .page-hero {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 38px 0;
+      }
+      .eyebrow {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .page-hero h1 {
+        margin-top: 8px;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+      }
+      .page-hero p {
+        margin-top: 12px;
+        max-width: 78ch;
+        color: var(--muted);
+      }
+      .pull-quote-band {
+        padding: 0;
+      }
+      .pull-quote {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(rgba(19, 41, 75, 0.52), rgba(19, 41, 75, 0.52)),
+          url("assets/photos/home-hero-cover.jpeg") center/cover no-repeat;
+        padding: 88px 0;
+      }
+      .pull-quote-inner {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #d6dce8;
+        padding: 26px 24px;
+      }
+      .pull-quote blockquote {
+        margin: 0;
+        font-family: Georgia, serif;
+        font-size: clamp(1.4rem, 2.8vw, 2rem);
+        color: var(--navy);
+        line-height: 1.35;
+      }
+      .pull-quote .attr {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+      .pull-quote-band + .section {
+        padding-top: 0;
+      }
+      .section-head {
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        margin-bottom: 22px;
+      }
+      .section-head h2 {
+        margin-top: 8px;
+        font-size: clamp(1.7rem, 3vw, 2.8rem);
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .person-card {
+        background: #fff;
+        border: 1px solid #e0e4ea;
+        border-radius: 10px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .person-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .person-card h3 {
+        font-size: 1.35rem;
+      }
+      .name-line {
+        margin-top: 6px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .role-note {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+      .dual-badge {
+        margin-top: 8px;
+        display: inline-block;
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--accent);
+      }
+      .person-link {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 0.92rem;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .site-footer {
+        margin-top: 80px;
+        background: radial-gradient(120% 140% at 50% 0%, #1a3a66 0%, #0f2340 48%, #0b1a30 100%);
+        color: var(--white);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .footer-top {
+        padding: 46px 0 28px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 36px;
+        align-items: start;
+      }
+      .footer-top h3 { color: var(--white); font-size: 2rem; margin-bottom: 8px; letter-spacing: 0.01em; }
+      .footer-tag { color: #d6e3f6; max-width: 34ch; line-height: 1.5; font-size: 1.03rem; }
+      .footer-brand { max-width: 430px; }
+      .footer-links { display: grid; gap: 12px; align-content: start; }
+      .footer-links a {
+        color: #dbe7f8;
+        padding: 2px 0;
+        border-bottom: 1px solid transparent;
+        width: fit-content;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .footer-links a:hover { color: var(--white); border-color: rgba(219, 231, 248, 0.65); }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-self: center;
+        margin-top: 6px;
+        justify-self: center;
+        min-width: max-content;
+      }
+      .footer-nav a {
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        color: #e2ebf9;
+        border: none;
+        padding: 4px 0;
+        position: relative;
+      }
+      .footer-nav a:hover { color: var(--white); }
+      .footer-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: rgba(226, 235, 249, 0.6);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease;
+      }
+      .footer-nav a:hover::after { transform: scaleX(1); }
+      .footer-contact { justify-items: end; }
+      .linkedin-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #e2ebf9;
+        font-weight: 700;
+      }
+      .linkedin-icon {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(226, 235, 249, 0.7);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.24);
+        padding: 16px 0 22px;
+        font-size: 0.88rem;
+        color: #b6c7de;
+        text-align: center;
+      }
+      .footer-subtag {
+        margin-top: 14px;
+        color: #c9d6ea;
+        font-size: 0.83rem;
+        letter-spacing: 0.015em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border: 1px solid rgba(201, 214, 234, 0.34);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .footer-subtag::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      @media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 768px) {
+        .container { width: min(100%, calc(100% - 24px)); }
+        .header-inner {
+          min-height: auto;
+          padding: 12px 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .site-nav { flex-wrap: wrap; gap: 14px; }
+        .grid-2, .grid-3, .footer-top { grid-template-columns: 1fr; }
+        .footer-top { text-align: center; gap: 22px; }
+        .footer-brand { margin: 0 auto; }
+        .footer-nav { justify-content: center; }
+        .footer-contact { justify-items: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Carolina BuySide home">
+          <img src="assets/carolina-buyside-logo-final.png" alt="Carolina BuySide logo" />
+          <div>
+            <div class="brand-title">Carolina BuySide</div>
+            <div class="brand-subtitle">UNC Student Run Buy-Side Organization</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="sectors.html">Sectors</a>
+          <a class="active" href="team.html">Team</a>
+          <a class="join-cta" href="join.html">Join</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Leadership</div>
+          <h1>Meet the Carolina BuySide executive team.</h1>
+          <p>
+            Carolina BuySide is led by a student team spanning executive leadership, private equity,
+            growth equity, venture capital, and sector coverage across the broader organization.
+          </p>
+        </div>
+      </section>
+
+      <section class="pull-quote-band">
+        <div class="pull-quote">
+          <div class="container">
+            <div class="pull-quote-inner">
+              <blockquote>
+                "Our objective is to build a rigorous student investing platform that develops judgment,
+                communication, and long-term professional readiness."
+              </blockquote>
+              <div class="attr">- Carolina BuySide Leadership Team</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Founders &amp; Co-Presidents</div>
+            <h2>The student leaders shaping Carolina BuySide.</h2>
+          </div>
+          <div class="grid-2">
+            <article class="person-card">
+              <img src="assets/headshots/marc-rainone-3b69932aa.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Marc Rainone headshot" />
+              <h3>Founder &amp; Co-President</h3>
+              <div class="name-line">Marc Rainone</div>
+              <p class="role-note">Co-leads the organization and helps set the club’s strategy, culture, and growth.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/marc-rainone-3b69932aa/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <img src="assets/headshots/hunter-fant.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Hunter Fant headshot" />
+              <h3>Founder &amp; Co-President</h3>
+              <div class="name-line">Hunter Fant</div>
+              <p class="role-note">Co-leads the club and helps drive member experience, direction, and recruiting.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/hunter-fant/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Directors of Venture Capital</div>
+            <h2>The team focused on early-stage thinking, venture research, and startup analysis.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="person-card">
+              <img src="assets/headshots/dylanclark-.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Dylan Clark headshot" />
+              <h3>Director of Venture Capital</h3>
+              <div class="name-line">Dylan Clark</div>
+              <p class="role-note">Supports venture programming and helps members think through early-stage companies and markets.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/dylanclark-/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <img src="assets/headshots/n-shah.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Niel Shah headshot" />
+              <h3>Director of Venture Capital</h3>
+              <div class="name-line">Niel Shah</div>
+              <p class="role-note">Helps guide venture-focused content across sourcing, startup evaluation, and discussion-led learning.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/n-shah" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <img src="assets/headshots/nikhil-kamisetty-163042261.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Nikhil Kamisetty headshot" />
+              <h3>Director of Venture Capital</h3>
+              <div class="name-line">Nikhil Kamisetty</div>
+              <p class="role-note">Supports the venture capital track through startup analysis and collaborative investment discussion.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/nikhil-kamisetty-163042261/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Directors of Private Equity</div>
+            <h2>The team focused on underwriting, company analysis, and mature business evaluation.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="person-card">
+              <img src="assets/headshots/grant-cellar.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Grant Cellar headshot" />
+              <h3>Director of Private Equity</h3>
+              <div class="name-line">Grant Cellar</div>
+              <p class="role-note">Supports private equity programming around evaluating businesses, industries, and investment theses.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/grant-cellar/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <img src="assets/headshots/connorrparker.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Connor Parker headshot" />
+              <h3>Director of Private Equity</h3>
+              <div class="name-line">Connor Parker</div>
+              <p class="role-note">Helps lead the PE track through company analysis, discussion, and member learning.</p>
+              <div class="dual-badge">Also serves as Sector Head - Healthcare.</div>
+              <a class="person-link" href="https://www.linkedin.com/in/connorrparker/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <img src="assets/headshots/andrew-grecu.jpg?v=20260325" style="border-radius:50%; width:80px; height:80px; display:block; margin-bottom:12px;" alt="Andrew Grecu headshot" />
+              <h3>Director of Private Equity</h3>
+              <div class="name-line">Andrew Grecu</div>
+              <p class="role-note">Supports the PE side of the club with research, analysis, and private-market discussion.</p>
+              <div class="dual-badge">Also serves as Sector Head - Consumer.</div>
+              <a class="person-link" href="https://www.linkedin.com/in/andrew-grecu/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Sector Heads</div>
+            <h2>Sector leadership across the broader Carolina BuySide platform.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="person-card">
+              <h3>Consumer</h3>
+              <div class="name-line">Andrew Grecu - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/andrew-grecu/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <h3>TMT</h3>
+              <div class="name-line">Saatvik Yamala - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/saatvik-yamala/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <h3>Healthcare</h3>
+              <div class="name-line">Connor Parker - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/connorrparker/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <h3>Real Estate &amp; Gov</h3>
+              <div class="name-line">Hunter Fant - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/hunter-fant/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <h3>Industrials</h3>
+              <div class="name-line">Parker Hausmann - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/parker-hausmann-120551272/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+            <article class="person-card">
+              <h3>Energy</h3>
+              <div class="name-line">Marc Rainone - Sector Head</div>
+              <a class="person-link" href="https://www.linkedin.com/in/marc-rainone-3b69932aa/" target="_blank" rel="noreferrer">LinkedIn →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <h3>Carolina BuySide</h3>
+          <p class="footer-tag">Carolina BuySide at UNC-Chapel Hill</p>
+          <p class="footer-subtag">Club Partner with <a href="https://www.perplexity.ai/" target="_blank" rel="noreferrer"><strong>Perplexity</strong></a></p>
+        </div>
+        <div class="footer-links footer-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="sectors.html">Sectors</a>
+          <a href="team.html">Team</a>
+          <a href="join.html">Join</a>
+        </div>
+        <div class="footer-links footer-contact">
+          <a
+            class="linkedin-link"
+            href="https://www.linkedin.com/company/carolinabuyside/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="linkedin-icon">in</span>
+            LinkedIn
+          </a>
+          <a href="mailto:carolinabuyside@gmail.com">carolinabuyside@gmail.com</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <div>© 2026 Carolina BuySide. Built for recruiting and programming.</div>
+      </div>
+    </footer>
+  </body>
+</html>

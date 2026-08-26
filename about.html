@@ -31,9 +31,198 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/site.css?v=20260826t" />
+    <link rel="stylesheet" href="assets/site.css?v=20260827m" />
 
     <style>
+      /* ---------------------------------------------------------- story -- */
+      .story {
+        padding: 66px 0 0;
+      }
+
+      /* Before / after the rebrand, shown rather than described */
+      .rebrand {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 30px;
+        max-width: 760px;
+        margin: 6px auto 0;
+      }
+
+      .rebrand-side {
+        margin: 0;
+        text-align: center;
+      }
+
+      .rebrand-tile {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        width: min(100%, 210px);
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      }
+
+      /* Both logos ship on the same brand plate, so the tiles are identical -
+         no background or padding of their own, just a rounded crop. */
+      .rebrand-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .rebrand-tile--old,
+      .rebrand-tile--new {
+        box-shadow: var(--shadow-md);
+      }
+
+      .rebrand-side:hover .rebrand-tile {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .rebrand-side figcaption {
+        margin-top: 18px;
+        font-family: var(--font-serif);
+        font-size: 1.16rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+
+      .rebrand-year {
+        display: block;
+        margin-bottom: 5px;
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--accent-600);
+      }
+
+      .rebrand-arrow {
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .rebrand-arrow span {
+        position: relative;
+        width: 16px;
+        height: 2px;
+        background: var(--accent-600);
+      }
+
+      .rebrand-arrow span::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -3px;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid var(--accent-600);
+        border-right: 2px solid var(--accent-600);
+        transform: rotate(45deg);
+      }
+
+      /* Milestone rail */
+      .rail {
+        list-style: none;
+        margin: 62px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        position: relative;
+      }
+
+      .rail::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 7px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--line), var(--accent), var(--line));
+      }
+
+      .milestone {
+        position: relative;
+        padding-top: 34px;
+      }
+
+      .milestone::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 0 5px var(--white);
+      }
+
+      .milestone-year {
+        font-size: 0.74rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--accent-600);
+        margin-bottom: 9px;
+      }
+
+      .milestone h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .milestone p {
+        color: var(--muted);
+        font-size: 0.97rem;
+      }
+
+      @media (max-width: 860px) {
+        .rebrand {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .rebrand-arrow {
+          transform: rotate(90deg);
+          margin: 0 auto;
+        }
+
+        .rail {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+
+        .rail::before {
+          left: 7px;
+          right: auto;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          height: auto;
+          background: linear-gradient(180deg, var(--line), var(--accent), var(--line));
+        }
+
+        .milestone {
+          padding-top: 0;
+          padding-left: 38px;
+        }
+      }
+
       /* -------------------------------------------------------- pillars -- */
       .pillar {
         border: 1px solid var(--line);
@@ -67,6 +256,88 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+      }
+
+      /* -------------------------------------------------- partner band -- */
+      .partner-band {
+        margin-top: 76px;
+        background: #0b1615;
+        padding: 76px 0;
+      }
+
+      .partner-head {
+        max-width: 74ch;
+      }
+
+      .partner-logo {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 26px;
+      }
+
+      /* Perplexity's wordmark is a clean lowercase geometric sans; Inter at this
+         weight and tracking is a close stand-in until the real asset is dropped in. */
+      .partner-word {
+        font-family: var(--font-sans);
+        font-size: 1.9rem;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        line-height: 1;
+      }
+
+      .partner-band .eyebrow {
+        color: #20b8cd;
+      }
+
+      .partner-band h2 {
+        color: #ffffff;
+        margin-top: 10px;
+        font-size: clamp(1.7rem, 2.9vw, 2.5rem);
+        max-width: 24ch;
+      }
+
+      .partner-head p {
+        margin-top: 16px;
+        color: #b9cdcb;
+        font-size: 1.06rem;
+      }
+
+      .partner-inner {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 56px;
+        align-items: start;
+      }
+
+      .partner-lead {
+        font-size: 1.18rem;
+        line-height: 1.6;
+        color: #d6e6e4;
+      }
+
+      .partner-story p + p {
+        margin-top: 20px;
+      }
+
+      .partner-story p {
+        color: #a7bcba;
+        font-size: 1.01rem;
+      }
+
+      .partner-takeaway {
+        margin-top: 28px !important;
+        padding-left: 22px;
+        border-left: 2px solid #20b8cd;
+        color: #ffffff !important;
+        font-family: var(--font-serif);
+        font-size: 1.16rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 860px) {
+        .partner-inner { grid-template-columns: 1fr; gap: 30px; }
+        .partner-band { margin-top: 54px; padding: 54px 0; }
       }
 
       /* ---------------------------------------------------------- ai band -- */
@@ -186,26 +457,71 @@
         </div>
       </section>
 
-      <section class="section" style="padding-top: 0;">
+      <section class="story">
         <div class="container">
-          <div class="stat-band" data-reveal>
-            <div class="stat">
-              <div class="stat-num">2025</div>
-              <div class="stat-label">Founded</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">3</div>
-              <div class="stat-label">Strategies covered</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">6</div>
-              <div class="stat-label">Sector teams</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">9</div>
-              <div class="stat-label">Firms members have joined</div>
-            </div>
+          <div class="section-head center" data-reveal>
+            <div class="eyebrow">Our Story</div>
+            <h2>From a PE/VC club to a buy-side organization.</h2>
+            <p>
+              Carolina BuySide is young, and the name on the door has already changed once. That
+              change was the point &mdash; the club outgrew the two strategies it started with.
+            </p>
           </div>
+
+          <div class="rebrand" data-reveal>
+            <figure class="rebrand-side">
+              <div class="rebrand-tile rebrand-tile--old">
+                <img src="assets/pevc-logo-brand.png" alt="The former Carolina PE/VC Club logo" />
+              </div>
+              <figcaption>
+                <span class="rebrand-year">2025</span>
+                Carolina PE/VC
+              </figcaption>
+            </figure>
+
+            <div class="rebrand-arrow" aria-hidden="true">
+              <span></span>
+            </div>
+
+            <figure class="rebrand-side">
+              <div class="rebrand-tile rebrand-tile--new">
+                <img src="assets/carolina-buyside-logo-final.png" alt="The Carolina BuySide logo" />
+              </div>
+              <figcaption>
+                <span class="rebrand-year">Spring 2026</span>
+                Carolina BuySide
+              </figcaption>
+            </figure>
+          </div>
+
+          <ol class="rail">
+            <li class="milestone" data-reveal>
+              <div class="milestone-year">2025</div>
+              <h3>The club is founded</h3>
+              <p>
+                We launched as the Carolina Private Equity &amp; Venture Capital Club, built for
+                students who wanted structured exposure to private markets rather than a general
+                finance club.
+              </p>
+            </li>
+            <li class="milestone" data-reveal data-reveal-delay="110">
+              <div class="milestone-year">Spring 2026</div>
+              <h3>We become Carolina BuySide</h3>
+              <p>
+                The rebrand widened the remit. PE and VC were never the whole picture, and the new
+                name says what the club actually is: a buy-side organization, with sector coverage
+                at the centre of it.
+              </p>
+            </li>
+            <li class="milestone" data-reveal data-reveal-delay="220">
+              <div class="milestone-year">Today</div>
+              <h3>Six sectors, one standard</h3>
+              <p>
+                Members join one of six sector teams, follow that industry across the semester, and
+                bring public-to-private pitches back to the group to defend.
+              </p>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -277,30 +593,40 @@
       </section>
 
 
-      <section class="section">
+      <section class="partner-band">
         <div class="container">
-          <div class="section-head" data-reveal>
-            <div class="eyebrow">Partnership</div>
-            <h2>Club partner: Perplexity.</h2>
-          </div>
-          <div class="partner-card" data-reveal>
-            <div class="partner-mark" aria-hidden="true">P</div>
-            <div>
-              <h3>Modern research tooling, taught deliberately.</h3>
-              <p>
-                Carolina BuySide is a club partner with Perplexity. The partnership reflects how the
-                club approaches research &mdash; using modern tools to move faster on information
-                gathering, while keeping the analytical judgment that turns information into an
-                actual investment view.
-              </p>
-              <div class="btn-row" style="margin-top: 18px;">
-                <a
-                  class="btn btn-outline"
-                  href="https://www.perplexity.ai/"
-                  target="_blank"
-                  rel="noreferrer"
-                >Visit Perplexity</a>
+          <div class="partner-inner">
+            <div class="partner-head" data-reveal>
+              <div class="partner-logo">
+                <span class="partner-word">perplexity</span>
               </div>
+              <div class="eyebrow">Partnership</div>
+              <h2>Employers are increasingly hiring for AI fluency. We train for it.</h2>
+            </div>
+
+            <div class="partner-story" data-reveal data-reveal-delay="90">
+              <p class="partner-lead">
+                Carolina BuySide is a partner of Perplexity. Through the club, members get access to
+                their stock pitch competition &mdash; handed Perplexity's models and asked to build a
+                complete pitch with them: the sourcing, the research, the thesis, the valuation.
+                Selected teams present to senior investors at hedge funds and asset managers.
+              </p>
+              <p>
+                We take this seriously because the industry is moving. Hedge funds and asset
+                managers are increasingly focused on AI talent, and fluency with these tools is
+                shifting from a differentiator to an expectation. Members who can direct the
+                research rather than just perform it are the ones who will be hired.
+              </p>
+              <p>
+                Our goal is not members who prompt faster. It is members who know what the tool is
+                genuinely good at, where it quietly fails, and which parts of this job were never
+                going to be automated &mdash; forming a view, sizing conviction, and defending it in
+                front of people who do this for a living.
+              </p>
+              <p class="partner-takeaway">
+                That is why AI shows up in our onboarding, rather than on a list of things members
+                are not allowed to use.
+              </p>
             </div>
           </div>
         </div>
@@ -437,6 +763,6 @@
       </div>
     </footer>
 
-    <script src="assets/site.js?v=20260826t"></script>
+    <script src="assets/site.js?v=20260827m"></script>
   </body>
 </html>

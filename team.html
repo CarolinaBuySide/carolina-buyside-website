@@ -31,29 +31,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/site.css?v=20260826t" />
+    <link rel="stylesheet" href="assets/site.css?v=20260827m" />
 
     <style>
-      /* -------------------------------------------------------- grids -- */
-      .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-      }
-
-      .grid-3 {
+      /* ------------------------------------------------- leader grid -- */
+      .leader-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
+        gap: 26px;
       }
 
-      /* -------------------------------------------------- person cards -- */
       .person-card {
         position: relative;
         background: var(--white);
         border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 30px 28px;
+        border-radius: 16px;
+        padding: 36px 32px;
         display: flex;
         flex-direction: column;
         box-shadow: var(--shadow-sm);
@@ -84,147 +77,68 @@
       }
 
       .person-card img.headshot {
-        width: 84px;
-        height: 84px;
+        width: 104px;
+        height: 104px;
         border-radius: 50%;
         object-fit: cover;
         display: block;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
         box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--line);
       }
 
       .person-card h3 {
-        font-size: 1.32rem;
-        margin-bottom: 4px;
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      /* One line per role - people can hold more than one */
+      .person-roles {
+        display: grid;
+        gap: 3px;
       }
 
       .person-role {
-        font-size: 0.78rem;
-        letter-spacing: 0.1em;
+        font-size: 0.76rem;
+        letter-spacing: 0.09em;
         text-transform: uppercase;
         font-weight: 600;
         color: var(--accent-600);
+        line-height: 1.35;
       }
 
       .person-bio {
-        margin-top: 14px;
+        margin-top: 16px;
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.96rem;
         flex: 1;
       }
 
       .person-link {
-        margin-top: 18px;
+        margin-top: 20px;
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        font-size: 0.88rem;
+        font-size: 0.9rem;
         color: var(--accent-600);
         font-weight: 600;
         width: fit-content;
         transition: gap 0.2s var(--ease), color 0.2s var(--ease);
       }
 
-      .person-link::after {
-        content: "\2192";
-      }
+      .person-link::after { content: "\2192"; }
 
       .person-link:hover {
         gap: 11px;
         color: var(--navy);
       }
 
-      /* Featured founders sit on a tinted card */
-      .person-card.featured {
-        background: linear-gradient(160deg, var(--slate) 0%, #fbfdff 100%);
-      }
-
-      .person-card.featured img.headshot {
-        width: 96px;
-        height: 96px;
-      }
-
-      .person-card.featured h3 {
-        font-size: 1.55rem;
-      }
-
-      /* ---------------------------------------------- sector head strip -- */
-      .head-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .head-row {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 16px 18px;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: var(--white);
-        transition: border-color 0.24s var(--ease), background 0.24s var(--ease),
-          transform 0.24s var(--ease);
-      }
-
-      .head-row:hover {
-        border-color: var(--accent);
-        background: var(--accent-soft);
-        transform: translateY(-2px);
-      }
-
-      /* Direct child only - the firm logo lives inside .head-firm and must not
-         inherit the circular avatar treatment. */
-      .head-row > img {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        object-fit: cover;
-        flex: none;
-        box-shadow: 0 0 0 1px var(--line);
-      }
-
-      .head-sector {
-        font-family: var(--font-serif);
-        font-size: 1.08rem;
-        font-weight: 600;
-        color: var(--navy);
-        line-height: 1.2;
-      }
-
-      .head-name {
-        font-size: 0.86rem;
-        color: var(--muted);
-        margin-top: 3px;
-      }
-
-      .head-firm {
-        display: flex;
-        align-items: center;
-        margin-top: 7px;
-      }
-
-      .head-firm img {
-        height: 14px;
-        width: auto;
-        max-width: 96px;
-        object-fit: contain;
-        display: block;
-      }
-
       @media (max-width: 1024px) {
-        .grid-3,
-        .head-grid {
-          grid-template-columns: 1fr 1fr;
-        }
+        .leader-grid { grid-template-columns: 1fr 1fr; }
       }
 
       @media (max-width: 768px) {
-        .grid-2,
-        .grid-3,
-        .head-grid {
-          grid-template-columns: 1fr;
-        }
+        .leader-grid { grid-template-columns: 1fr; }
+        .person-card { padding: 28px 24px; }
       }
     </style>
   </head>
@@ -286,8 +200,8 @@
           <div class="eyebrow">Leadership</div>
           <h1>The students running Carolina BuySide.</h1>
           <p class="lede">
-            Carolina BuySide is led by a student executive team covering leadership, private equity,
-            venture capital, and sector coverage across the organization.
+            Carolina BuySide is led by a student executive team that sets club direction and leads
+            coverage across each of our six sectors.
           </p>
         </div>
       </section>
@@ -295,262 +209,92 @@
       <section class="section">
         <div class="container">
           <div class="section-head" data-reveal>
-            <div class="eyebrow">Founders</div>
-            <h2>Founders &amp; Co-Presidents</h2>
+            <div class="eyebrow">The Team</div>
+            <h2>Club leadership</h2>
           </div>
-          <div class="grid-2">
-            <article class="person-card featured" data-reveal>
+          <div class="leader-grid">
+            <article class="person-card" data-reveal>
               <img class="headshot" src="assets/headshots/marc-rainone-3b69932aa.jpg" alt="Marc Rainone" />
               <h3>Marc Rainone</h3>
+              <div class="person-roles">
               <div class="person-role">Founder &amp; Co-President</div>
+              <div class="person-role">Director of Energy</div>
+              </div>
               <div class="person-firm">
                 <img src="assets/firm-logos/millennium.svg" alt="Millennium" />
               </div>
-              <p class="person-bio">
-                Co-founded Carolina BuySide and sets the club's strategy, culture, and growth. Also
-                leads Energy coverage across upstream, midstream, and power themes.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/marc-rainone-3b69932aa/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
+              <p class="person-bio">Co-founded Carolina BuySide and sets the club's strategy, culture, and growth. Leads Energy coverage across upstream, midstream, and power themes.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/marc-rainone-3b69932aa/" target="_blank" rel="noreferrer">LinkedIn</a>
             </article>
 
-            <article class="person-card featured" data-reveal data-reveal-delay="90">
+            <article class="person-card" data-reveal data-reveal-delay="80">
               <img class="headshot" src="assets/headshots/hunter-fant.jpg" alt="Hunter Fant" />
               <h3>Hunter Fant</h3>
+              <div class="person-roles">
               <div class="person-role">Founder &amp; Co-President</div>
+              <div class="person-role">Director of REGL</div>
+              </div>
               <div class="person-firm">
                 <img src="assets/firm-logos/bank-of-america.svg" alt="Bank of America" />
               </div>
-              <p class="person-bio">
-                Co-founded the club and drives member experience, programming direction, and
-                recruiting. Also leads Real Estate &amp; Gov coverage across regulated markets.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/hunter-fant/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div class="eyebrow">Venture Capital</div>
-            <h2>Directors of Venture Capital</h2>
-            <p>Focused on early-stage thinking, venture research, and startup analysis.</p>
-          </div>
-          <div class="grid-3">
-            <article class="person-card" data-reveal>
-              <img class="headshot" src="assets/headshots/dylanclark-.jpg" alt="Dylan Clark" />
-              <h3>Dylan Clark</h3>
-              <div class="person-role">Director of Venture Capital</div>
-              <div class="person-firm">
-                <img src="assets/firm-logos/guggenheim.svg" alt="Guggenheim" />
-              </div>
-              <p class="person-bio">
-                Builds the venture track's programming, from sourcing frameworks to how members size up
-                early-stage markets.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/dylanclark-/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
-            </article>
-
-            <article class="person-card" data-reveal data-reveal-delay="80">
-              <img class="headshot" src="assets/headshots/n-shah.jpg" alt="Niel Shah" />
-              <h3>Niel Shah</h3>
-              <div class="person-role">Director of Venture Capital</div>
-              <div class="person-firm">
-                <img src="assets/firm-logos/jefferies.svg" alt="Jefferies" />
-              </div>
-              <p class="person-bio">
-                Shapes venture content around startup evaluation and runs the discussion-led sessions on
-                early-stage diligence.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/n-shah"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
-            </article>
-
-            <article class="person-card" data-reveal data-reveal-delay="160">
-              <img class="headshot" src="assets/headshots/nikhil-kamisetty-163042261.jpg" alt="Nikhil Kamisetty" />
-              <h3>Nikhil Kamisetty</h3>
-              <div class="person-role">Director of Venture Capital</div>
-              <div class="person-firm">
-                <img src="assets/firm-logos/jp-morgan.svg" alt="J.P. Morgan" />
-              </div>
-              <p class="person-bio">
-                Focuses on startup analysis and pressure-tests venture theses with members in group
-                discussion.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/nikhil-kamisetty-163042261/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div class="eyebrow">Private Equity</div>
-            <h2>Directors of Private Equity</h2>
-            <p>Focused on underwriting, company analysis, and mature business evaluation.</p>
-          </div>
-          <div class="grid-3">
-            <article class="person-card" data-reveal>
-              <img class="headshot" src="assets/headshots/grant-cellar.jpg" alt="Grant Cellar" />
-              <h3>Grant Cellar</h3>
-              <div class="person-role">Director of Private Equity</div>
-              <div class="person-firm">
-                <img src="assets/firm-logos/level-equity.svg" alt="Level Equity" />
-              </div>
-              <p class="person-bio">
-                Leads private equity programming on underwriting businesses, reading industries, and
-                building an investment thesis that holds up.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/grant-cellar/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
-            </article>
-
-            <article class="person-card" data-reveal data-reveal-delay="80">
-              <img class="headshot" src="assets/headshots/connorrparker.jpg" alt="Connor Parker" />
-              <h3>Connor Parker</h3>
-              <div class="person-role">Director of Private Equity</div>
-              <div class="person-firm">
-                <img src="assets/firm-logos/jp-morgan.svg" alt="J.P. Morgan" />
-              </div>
-              <p class="person-bio">
-                Runs PE company-analysis sessions and leads Healthcare coverage across services, life
-                sciences, and policy-shaped businesses.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/connorrparker/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
+              <p class="person-bio">Co-founded the club and drives member experience, programming direction, and recruiting. Leads coverage across real estate, gaming, lodging, and leisure.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/hunter-fant/" target="_blank" rel="noreferrer">LinkedIn</a>
             </article>
 
             <article class="person-card" data-reveal data-reveal-delay="160">
               <img class="headshot" src="assets/headshots/andrew-grecu.jpg" alt="Andrew Grecu" />
               <h3>Andrew Grecu</h3>
-              <div class="person-role">Director of Private Equity</div>
+              <div class="person-roles">
+              <div class="person-role">Director of Consumer</div>
+              </div>
               <div class="person-firm">
                 <img src="assets/firm-logos/roark-capital.svg" alt="Roark Capital" />
               </div>
-              <p class="person-bio">
-                Supports PE research and discussion, and leads Consumer coverage across retail,
-                services, and demand-driven models.
-              </p>
-              <a
-                class="person-link"
-                href="https://www.linkedin.com/in/andrew-grecu/"
-                target="_blank"
-                rel="noreferrer"
-              >LinkedIn</a>
+              <p class="person-bio">Leads Consumer coverage across retail, services, and demand-driven business models.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/andrew-grecu/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </article>
+
+            <article class="person-card" data-reveal>
+              <img class="headshot" src="assets/headshots/saatvik-yamala.jpg" alt="Saatvik Yamala" />
+              <h3>Saatvik Yamala</h3>
+              <div class="person-roles">
+              <div class="person-role">Director of TMT</div>
+              </div>
+              <div class="person-firm">
+                <img src="assets/firm-logos/bank-of-america.svg" alt="Bank of America" />
+              </div>
+              <p class="person-bio">Leads TMT coverage across technology, media, and telecom, with a focus on growth and product dynamics.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/saatvik-yamala/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </article>
+
+            <article class="person-card" data-reveal data-reveal-delay="80">
+              <img class="headshot" src="assets/headshots/connorrparker.jpg" alt="Connor Parker" />
+              <h3>Connor Parker</h3>
+              <div class="person-roles">
+              <div class="person-role">Director of Healthcare</div>
+              </div>
+              <div class="person-firm">
+                <img src="assets/firm-logos/jp-morgan.svg" alt="J.P. Morgan" />
+              </div>
+              <p class="person-bio">Leads Healthcare coverage across services, life sciences, and businesses shaped by clinical and policy factors.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/connorrparker/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </article>
+
+            <article class="person-card" data-reveal data-reveal-delay="160">
+              <img class="headshot" src="assets/headshots/parker-hausmann-120551272.jpg" alt="Parker Hausmann" />
+              <h3>Parker Hausmann</h3>
+              <div class="person-roles">
+              <div class="person-role">Director of Industrials</div>
+              </div>
+              <div class="person-firm">
+                <img src="assets/firm-logos/houlihan-lokey.svg" alt="Houlihan Lokey" />
+              </div>
+              <p class="person-bio">Leads Industrials coverage across supply chains, manufacturing, transport, and infrastructure-linked companies.</p>
+              <a class="person-link" href="https://www.linkedin.com/in/parker-hausmann-120551272/" target="_blank" rel="noreferrer">LinkedIn</a>
             </article>
           </div>
         </div>
       </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div class="eyebrow">Sector Heads</div>
-            <h2>Coverage leadership</h2>
-            <p>
-              Each sector team is led by a student head who sets coverage direction and supports
-              members researching that industry.
-            </p>
-          </div>
-          <div class="head-grid">
-            <a class="head-row" href="https://www.linkedin.com/in/andrew-grecu/" target="_blank" rel="noreferrer" data-reveal>
-              <img src="assets/headshots/andrew-grecu.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">Consumer</div>
-                <div class="head-name">Andrew Grecu</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/roark-capital.svg" alt="Roark Capital" />
-                </div>
-              </div>
-            </a>
-            <a class="head-row" href="https://www.linkedin.com/in/saatvik-yamala/" target="_blank" rel="noreferrer" data-reveal data-reveal-delay="60">
-              <img src="assets/headshots/saatvik-yamala.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">TMT</div>
-                <div class="head-name">Saatvik Yamala</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/bank-of-america.svg" alt="Bank of America" />
-                </div>
-              </div>
-            </a>
-            <a class="head-row" href="https://www.linkedin.com/in/connorrparker/" target="_blank" rel="noreferrer" data-reveal data-reveal-delay="120">
-              <img src="assets/headshots/connorrparker.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">Healthcare</div>
-                <div class="head-name">Connor Parker</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/jp-morgan.svg" alt="J.P. Morgan" />
-                </div>
-              </div>
-            </a>
-            <a class="head-row" href="https://www.linkedin.com/in/hunter-fant/" target="_blank" rel="noreferrer" data-reveal>
-              <img src="assets/headshots/hunter-fant.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">Real Estate &amp; Gov</div>
-                <div class="head-name">Hunter Fant</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/bank-of-america.svg" alt="Bank of America" />
-                </div>
-              </div>
-            </a>
-            <a class="head-row" href="https://www.linkedin.com/in/parker-hausmann-120551272/" target="_blank" rel="noreferrer" data-reveal data-reveal-delay="60">
-              <img src="assets/headshots/parker-hausmann-120551272.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">Industrials</div>
-                <div class="head-name">Parker Hausmann</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/houlihan-lokey.svg" alt="Houlihan Lokey" />
-                </div>
-              </div>
-            </a>
-            <a class="head-row" href="https://www.linkedin.com/in/marc-rainone-3b69932aa/" target="_blank" rel="noreferrer" data-reveal data-reveal-delay="120">
-              <img src="assets/headshots/marc-rainone-3b69932aa.jpg" alt="" aria-hidden="true" />
-              <div>
-                <div class="head-sector">Energy</div>
-                <div class="head-name">Marc Rainone</div>
-                <div class="head-firm">
-                  <img src="assets/firm-logos/millennium.svg" alt="Millennium" />
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
 
       <section class="section">
         <div class="container">
@@ -562,12 +306,7 @@
               Sunday, September 6.
             </p>
             <div class="btn-row">
-              <a
-                class="btn btn-accent"
-                href="https://lnkd.in/e6Gw8-Ka"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a class="btn btn-accent" href="https://lnkd.in/e6Gw8-Ka" target="_blank" rel="noreferrer">
                 Apply now <span class="arr" aria-hidden="true">&rarr;</span>
               </a>
               <a class="btn btn-outline-light" href="join.html">Application details</a>
@@ -614,6 +353,6 @@
       </div>
     </footer>
 
-    <script src="assets/site.js?v=20260826t"></script>
+    <script src="assets/site.js?v=20260827m"></script>
   </body>
 </html>

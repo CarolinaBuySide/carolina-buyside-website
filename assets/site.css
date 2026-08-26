@@ -1167,29 +1167,18 @@ main {
 }
 
 /* --------------------------------------------------- person firm line -- */
-/* Firm chip holds the real logo. White ground rather than the tinted pill, since
-   the logos carry their own brand colours and would clash with a blue fill. */
+/* Logo sits bare on the card - no chip, no border. The marks carry their own
+   colour and read better without a container competing with them. */
 .person-firm {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  margin-top: 10px;
-  padding: 7px 13px;
-  border-radius: 9px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  width: fit-content;
-  transition: border-color 0.24s var(--ease), box-shadow 0.24s var(--ease);
-}
-
-.person-card:hover .person-firm {
-  border-color: var(--slate-200);
-  box-shadow: var(--shadow-sm);
+  margin-top: 13px;
 }
 
 .person-firm img {
-  height: 18px;
+  height: 24px;
   width: auto;
-  max-width: 124px;
+  max-width: 152px;
   object-fit: contain;
   display: block;
 }

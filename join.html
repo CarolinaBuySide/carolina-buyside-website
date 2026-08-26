@@ -603,32 +603,54 @@
 
     <script src="assets/site.js?v=20260826t"></script>
     <script>
-      /* Days remaining until the application deadline (end of day, Sept 6 2026). */
+      /* Days remaining until the application deadline (end of day, Sept 6 2026).
+         Recomputed from the visitor's clock on every render - nothing is baked
+         into the markup. Re-runs on bfcache restore and rolls over at midnight so
+         a long-open tab can't sit on a stale number. */
       (function () {
         var el = document.getElementById("days-left");
         var label = document.getElementById("days-label");
         if (!el) return;
 
-        var deadline = new Date(2026, 8, 6, 23, 59, 59); // month is 0-indexed
-        var now = new Date();
-        // floor, so "11" means 11 more days after today rather than counting today twice
-        var days = Math.floor((deadline - now) / 86400000);
+        var DEADLINE = new Date(2026, 8, 6, 23, 59, 59); // month is 0-indexed
 
-        if (days > 1) {
-          el.textContent = days;
-          label.textContent = "Days to apply";
-        } else if (days === 1) {
-          el.textContent = "1";
-          label.textContent = "Day to apply";
-        } else if (days === 0) {
-          el.textContent = "Today";
-          el.style.fontSize = "2.4rem";
-          label.textContent = "Final day to apply";
-        } else {
-          el.textContent = "Closed";
-          el.style.fontSize = "2.4rem";
-          label.textContent = "Applications closed";
+        function render() {
+          // floor, so "11" means 11 more days after today rather than counting today twice
+          var days = Math.floor((DEADLINE - new Date()) / 86400000);
+
+          el.style.fontSize = "";
+          if (days > 1) {
+            el.textContent = days;
+            label.textContent = "Days to apply";
+          } else if (days === 1) {
+            el.textContent = "1";
+            label.textContent = "Day to apply";
+          } else if (days === 0) {
+            el.textContent = "Today";
+            el.style.fontSize = "2.4rem";
+            label.textContent = "Final day to apply";
+          } else {
+            el.textContent = "Closed";
+            el.style.fontSize = "2.4rem";
+            label.textContent = "Applications closed";
+          }
+          return days;
         }
+
+        render();
+
+        // Restored from back/forward cache - scripts don't re-run, so redraw.
+        window.addEventListener("pageshow", function (e) {
+          if (e.persisted) render();
+        });
+
+        // Tab left open overnight: redraw just after the next local midnight.
+        var midnight = new Date();
+        midnight.setHours(24, 0, 5, 0);
+        setTimeout(function tick() {
+          render();
+          setTimeout(tick, 86400000);
+        }, midnight - new Date());
       })();
     </script>
   </body>

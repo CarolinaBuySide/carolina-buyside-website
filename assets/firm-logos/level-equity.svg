@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="214" viewBox="0 0 1100 214">
+  <rect width="100%" height="100%" fill="none"/>
+  <rect x="25" y="32" width="505" height="145" rx="5" fill="#1D3B54"/>
+  <text x="277" y="136" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="88" font-weight="700" letter-spacing="16" fill="#FFFFFF">LEVEL</text>
+  <text x="575" y="136" font-family="Arial, Helvetica, sans-serif"
+        font-size="88" font-weight="400" letter-spacing="16" fill="#1D3B54">EQUITY</text>
+</svg>

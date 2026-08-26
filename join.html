@@ -3,359 +3,303 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carolina BuySide | Join</title>
+    <title>Carolina BuySide | Apply</title>
     <meta
       name="description"
-      content="Join Carolina BuySide at UNC. View application guidance, recruiting expectations, and organization updates."
+      content="Applications for Carolina BuySide Fall 2026 are open and close Sunday, September 6. Review the timeline, what we look for, and how to apply."
     />
+
+    <meta property="og:title" content="Apply to Carolina BuySide - Fall 2026" />
+    <meta
+      property="og:description"
+      content="Applications for Fall 2026 are open and close Sunday, September 6."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://carolinabuyside.github.io/carolina-buyside-website/join.html"
+    />
+    <meta
+      property="og:image"
+      content="https://carolinabuyside.github.io/carolina-buyside-website/assets/carolina-buyside-logo-final.png"
+    />
+
+    <link rel="icon" href="assets/carolina-buyside-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/site.css?v=20260826t" />
+
     <style>
-      :root {
-        --navy: #13294b;
-        --accent: #4a90d9;
-        --slate: #f0f3f7;
-        --white: #ffffff;
-        --text: #1a1a2e;
-        --muted: #4b5568;
-        --line: #d6dce8;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--text);
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        background: var(--white);
-      }
-      h1, h2, h3 { margin: 0; font-family: Georgia, serif; color: var(--navy); }
-      p { margin: 0; line-height: 1.65; }
-      a { color: inherit; text-decoration: none; }
-      .container { width: min(1440px, calc(100% - 56px)); margin: 0 auto; }
-      .site-header {
-        border-bottom: 1px solid var(--line);
-        background: var(--white);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-      }
-      .header-inner {
-        min-height: 94px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-      .brand { display: flex; align-items: center; gap: 14px; }
-      .brand img { width: 58px; height: 58px; object-fit: cover; }
-      .brand-title {
-        font-family: Georgia, serif;
-        font-size: 1.8rem;
-        line-height: 0.95;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .brand-subtitle {
-        margin-top: 3px;
-        font-size: 0.78rem;
-        text-transform: none;
-        letter-spacing: 0.02em;
-        color: var(--muted);
-      }
-      .site-nav {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        font-size: 0.86rem;
-        text-transform: uppercase;
-        letter-spacing: 0.07em;
-        font-weight: 700;
-      }
-      .site-nav a {
-        padding-bottom: 6px;
-        border-bottom: 1px solid transparent;
-        color: #23364f;
-      }
-      .site-nav a:hover, .site-nav a.active { border-color: var(--accent); }
-      .site-nav .join-cta {
-        border: 1px solid var(--navy);
-        background: var(--navy);
-        color: var(--white);
-        padding: 9px 14px;
-        border-radius: 6px;
-      }
-      .site-nav .join-cta:hover, .site-nav .join-cta.active {
-        border-color: var(--accent);
-        background: var(--accent);
-      }
-      main { padding: 34px 0 0; }
-      .section { padding: 58px 0 0; }
-      .page-hero {
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        padding: 46px 0;
-      }
-      .eyebrow {
-        font-size: 0.8rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .page-hero h1 {
-        margin-top: 8px;
-        font-size: clamp(2rem, 4vw, 3.4rem);
-      }
-      .subheadline {
-        margin-top: 10px;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .page-hero p {
-        margin-top: 10px;
-        max-width: 78ch;
-        color: var(--muted);
-      }
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        align-items: start;
-      }
-      .panel {
-        border: 1px solid var(--line);
-        padding: 20px;
-      }
-      .recruiting-band {
-        background:
-          linear-gradient(rgba(19, 41, 75, 0.5), rgba(19, 41, 75, 0.5)),
-          url("assets/photos/sectors-research.jpg") center/cover no-repeat;
-        padding-bottom: 18px;
-      }
-      .recruiting-band .panel {
-        background: rgba(255, 255, 255, 0.96);
-        border-color: #ccd6e6;
-      }
-      .panel h2 {
-        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-        margin-bottom: 12px;
-      }
-      .panel ul {
-        margin: 0;
-        padding-left: 20px;
-      }
-      .panel li { margin-bottom: 10px; }
-      .btn-row {
-        margin-top: 18px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .btn {
+      /* --------------------------------------------------- open banner -- */
+      .status-pill {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        min-height: 46px;
-        padding: 0 18px;
-        border: 1px solid transparent;
-        font-weight: 700;
-      }
-      .btn-primary {
-        background: var(--navy);
-        border-color: var(--navy);
-        color: var(--white);
-      }
-      .btn-outline {
-        border-color: var(--navy);
-        color: var(--navy);
-      }
-      .section-head {
-        border-top: 1px solid var(--line);
-        padding-top: 14px;
-        margin-bottom: 22px;
-      }
-      .section-head h2 {
-        margin-top: 8px;
-        font-size: clamp(1.7rem, 3vw, 2.8rem);
-      }
-      .timeline {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .timeline-step {
-        background: #f0f3f7;
-        border-left: 4px solid #4a90d9;
-        border-radius: 0 8px 8px 0;
-        padding: 20px 24px;
-      }
-      .timeline-step .step-number {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #4a90d9;
-        margin-bottom: 6px;
-      }
-      .timeline-step h3 {
-        font-size: 1.25rem;
-        margin-bottom: 8px;
-      }
-      .cards-3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-      .prog-card {
-        background: #fff;
-        border: 1px solid #e0e4ea;
-        border-top: 4px solid #4a90d9;
-        border-radius: 8px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .prog-card h3 {
-        font-size: 1.3rem;
-      }
-      .site-footer {
-        margin-top: 80px;
-        background: radial-gradient(120% 140% at 50% 0%, #1a3a66 0%, #0f2340 48%, #0b1a30 100%);
-        color: var(--white);
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .footer-top {
-        padding: 46px 0 28px;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        gap: 36px;
-        align-items: start;
-      }
-      .footer-top h3 { color: var(--white); font-size: 2rem; margin-bottom: 8px; letter-spacing: 0.01em; }
-      .footer-tag { color: #d6e3f6; max-width: 34ch; line-height: 1.5; font-size: 1.03rem; }
-      .footer-brand { max-width: 430px; }
-      .footer-links { display: grid; gap: 12px; align-content: start; }
-      .footer-links a {
-        color: #dbe7f8;
-        padding: 2px 0;
-        border-bottom: 1px solid transparent;
-        width: fit-content;
-        transition: color 0.2s ease, border-color 0.2s ease;
-      }
-      .footer-links a:hover { color: var(--white); border-color: rgba(219, 231, 248, 0.65); }
-      .footer-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 18px;
-        flex-wrap: wrap;
-        align-self: center;
-        margin-top: 6px;
-        justify-self: center;
-        min-width: max-content;
-      }
-      .footer-nav a {
-        font-weight: 600;
-        font-size: 1rem;
-        letter-spacing: 0.01em;
-        color: #e2ebf9;
-        border: none;
-        padding: 4px 0;
-        position: relative;
-      }
-      .footer-nav a:hover { color: var(--white); }
-      .footer-nav a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 100%;
-        height: 1px;
-        background: rgba(226, 235, 249, 0.6);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.2s ease;
-      }
-      .footer-nav a:hover::after { transform: scaleX(1); }
-      .footer-contact { justify-items: end; }
-      .linkedin-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: #e2ebf9;
-        font-weight: 700;
-      }
-      .linkedin-icon {
-        width: 28px;
-        height: 28px;
-        border: 1px solid rgba(226, 235, 249, 0.7);
-        border-radius: 6px;
-        background: rgba(255, 255, 255, 0.08);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.78rem;
-        font-weight: 700;
-      }
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.24);
-        padding: 16px 0 22px;
-        font-size: 0.88rem;
-        color: #b6c7de;
-        text-align: center;
-      }
-      .footer-subtag {
-        margin-top: 14px;
-        color: #c9d6ea;
-        font-size: 0.83rem;
-        letter-spacing: 0.015em;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 10px;
-        border: 1px solid rgba(201, 214, 234, 0.34);
+        gap: 9px;
+        padding: 7px 16px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.04);
+        background: #e7f6ec;
+        border: 1px solid #b7e3c6;
+        color: #1d6b39;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .footer-subtag::before {
+      .status-pill::before {
         content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #2e9e57;
+        flex: none;
+      }
+
+      .subheadline {
+        margin-top: 14px;
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: var(--navy);
+      }
+
+      /* ------------------------------------------------------ apply card -- */
+      .apply-band {
+        padding-top: 44px;
+      }
+
+      .apply-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: radial-gradient(120% 160% at 10% 0%, #1d3a68 0%, #13294b 52%, #0d1e38 100%);
+        color: var(--white);
+        padding: 44px 44px;
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .apply-card::after {
+        content: "";
+        position: absolute;
+        right: -90px;
+        top: -90px;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(74, 144, 217, 0.3) 0%, rgba(74, 144, 217, 0) 70%);
+      }
+
+      .apply-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .apply-card .eyebrow {
+        color: #9dc4ec;
+      }
+
+      .apply-card h2 {
+        color: var(--white);
+        font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+        margin: 10px 0 12px;
+      }
+
+      .apply-card p {
+        color: #d3e2f4;
+      }
+
+      .countdown {
+        text-align: center;
+        border-left: 1px solid rgba(255, 255, 255, 0.18);
+        padding-left: 34px;
+      }
+
+      .countdown-num {
+        font-family: var(--font-serif);
+        font-size: clamp(3rem, 7vw, 4.6rem);
+        font-weight: 700;
+        line-height: 1;
+        color: var(--white);
+      }
+
+      .countdown-label {
+        margin-top: 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #9dc4ec;
+        font-weight: 600;
+      }
+
+      .countdown-date {
+        margin-top: 14px;
+        font-size: 0.92rem;
+        color: #d3e2f4;
+      }
+
+      /* -------------------------------------------------------- timeline -- */
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        counter-reset: step;
+      }
+
+      .timeline-step {
+        position: relative;
+        background: var(--slate);
+        border-radius: 12px;
+        padding: 24px 22px;
+        transition: transform 0.28s var(--ease), background 0.28s var(--ease);
+      }
+
+      .timeline-step:hover {
+        transform: translateY(-3px);
+        background: var(--accent-soft);
+      }
+
+      .timeline-step.is-current {
+        background: var(--white);
+        border: 1px solid var(--accent);
+        box-shadow: var(--shadow-md);
+      }
+
+      .timeline-step .step-number {
+        font-family: var(--font-serif);
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .timeline-step h3 {
+        font-size: 1.08rem;
+        margin-bottom: 8px;
+      }
+
+      .timeline-step p {
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .step-tag {
         display: inline-block;
+        margin-bottom: 10px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--white);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      /* ---------------------------------------------------------- panels -- */
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        padding: 28px 26px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .panel h2 {
+        font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+        margin: 8px 0 12px;
+      }
+
+      .panel p {
+        color: var(--muted);
+      }
+
+      .panel ul {
+        margin: 14px 0 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .panel li {
+        position: relative;
+        padding-left: 26px;
+        margin-bottom: 11px;
+        color: var(--muted);
+      }
+
+      .panel li::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 9px;
         width: 7px;
         height: 7px;
-        margin-right: 8px;
         border-radius: 50%;
         background: var(--accent);
       }
+
+      @media (max-width: 900px) {
+        .timeline { grid-template-columns: 1fr 1fr; }
+      }
+
       @media (max-width: 768px) {
-        .container { width: min(100%, calc(100% - 24px)); }
-        .header-inner {
-          min-height: auto;
-          padding: 12px 0;
-          flex-direction: column;
-          align-items: flex-start;
+        .apply-card {
+          grid-template-columns: 1fr;
+          padding: 32px 26px;
+          gap: 24px;
         }
-        .site-nav { flex-wrap: wrap; gap: 14px; }
-        .two-col, .timeline, .cards-3, .footer-top { grid-template-columns: 1fr; }
-        .footer-top { text-align: center; gap: 22px; }
-        .footer-brand { margin: 0 auto; }
-        .footer-nav { justify-content: center; }
-        .footer-contact { justify-items: center; }
+
+        .countdown {
+          border-left: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.18);
+          padding-left: 0;
+          padding-top: 24px;
+        }
+
+        .timeline { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
+    <!-- Recruiting announcement: remove this <div> once applications close -->
+    <div class="announce">
+      <div class="container announce-inner">
+        <span class="announce-dot" aria-hidden="true"></span>
+        <span class="announce-text">
+          <strong>Fall 2026 applications are open.</strong>
+          <span class="announce-sep" aria-hidden="true">&nbsp;</span>
+          <span class="announce-deadline">Applications close Sunday, September 6.</span>
+        </span>
+        <a class="announce-link" href="https://lnkd.in/e6Gw8-Ka" target="_blank" rel="noreferrer">
+          Apply now <span class="arr" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="Carolina BuySide home">
-          <img src="assets/carolina-buyside-logo-final.png" alt="Carolina BuySide logo" />
+          <img src="assets/carolina-buyside-mark.png" alt="" aria-hidden="true" />
           <div>
             <div class="brand-title">Carolina BuySide</div>
             <div class="brand-subtitle">UNC Student Run Buy-Side Organization</div>
           </div>
         </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+        </button>
         <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="sectors.html">Sectors</a>
           <a href="team.html">Team</a>
-          <a class="join-cta active" href="join.html">Join</a>
+          <a class="join-cta active" href="join.html">Apply</a>
         </nav>
       </div>
     </header>
@@ -363,72 +307,170 @@
     <main>
       <section class="page-hero">
         <div class="container">
-          <div class="eyebrow">Join Carolina BuySide</div>
-          <h1>We recruit every semester.</h1>
-          <div class="subheadline">Applications for the current cycle are closed - follow us for the next recruiting window.</div>
+          <div class="status-pill">Applications Open</div>
+          <h1>Carolina BuySide applications for Fall 2026 are now open.</h1>
+          <div class="subheadline">Applications close Sunday, September 6.</div>
           <p>
-            Carolina BuySide is not currently accepting new members. Students interested in the
-            organization should follow club communications for the next recruiting cycle and future
-            programming updates.
+            Carolina BuySide is a student-run organization for students interested in developing a
+            deeper understanding of private markets, with exposure to buy-side investing. Through
+            structured learning, company pitches, sector work, practical discussion, and a
+            career-focused community, members develop a more disciplined approach to investment
+            thinking while connecting with other students interested in private investing.
           </p>
+          <div class="btn-row">
+            <a
+              class="btn btn-accent"
+              href="https://lnkd.in/e6Gw8-Ka"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start your application <span class="arr" aria-hidden="true">&rarr;</span>
+            </a>
+            <a
+              class="btn btn-outline"
+              href="https://www.linkedin.com/company/carolinabuyside/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Follow on LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="section recruiting-band">
-        <div class="container two-col">
-          <article class="panel">
-            <div class="eyebrow">Recruiting Snapshot</div>
-            <h2>Planning for the next recruiting cycle.</h2>
-            <p>
-              The current application window has closed, and the next formal recruiting cycle is
-              expected to open in Fall 2026. Until then, students can follow club updates and begin
-              preparing for interviews and public-to-private pitch discussion.
-            </p>
-          </article>
-          <article class="panel">
-            <div class="eyebrow">Stay Updated</div>
-            <h2>Follow the club until the next application window opens.</h2>
-            <p>
-              For students interested in buy-side paths across private equity (PE), growth equity
-              (GE), and venture capital (VC), the best next step is to stay connected and watch for
-              the next formal recruiting announcement.
-            </p>
-            <div class="btn-row">
-              <a
-                class="btn btn-primary"
-                href="https://www.linkedin.com/company/carolinabuyside/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Follow on LinkedIn
-              </a>
-              <a class="btn btn-outline" href="mailto:carolinabuyside@gmail.com">Email Us</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
+      <section class="apply-band" id="apply">
         <div class="container">
-          <div class="section-head">
+          <div class="apply-card" data-reveal>
+            <div>
+              <div class="eyebrow">Fall 2026 Recruiting</div>
+              <h2>One application. One deadline.</h2>
+              <p>
+                Applications are submitted through a single form. There is no separate resume drop
+                and no pre-application coffee chat requirement &mdash; submit the form before the
+                deadline and we will follow up with next steps.
+              </p>
+              <div class="btn-row">
+                <a
+                  class="btn btn-accent"
+                  href="https://lnkd.in/e6Gw8-Ka"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Apply now <span class="arr" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <div class="countdown">
+              <div class="countdown-num" id="days-left">&mdash;</div>
+              <div class="countdown-label" id="days-label">Days to apply</div>
+              <div class="countdown-date">Deadline: Sunday, September 6, 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="container">
+          <div class="section-head" data-reveal>
             <div class="eyebrow">What To Expect</div>
             <h2>Recruiting timeline</h2>
           </div>
           <div class="timeline">
-            <article class="timeline-step">
-              <div class="step-number">1</div>
-              <h3>Fall Recruiting Opens - August 2026</h3>
-              <p>Applications launch with role details, deadlines, and submission requirements.</p>
+            <article class="timeline-step is-current" data-reveal>
+              <div class="step-tag">Now</div>
+              <div class="step-number">01</div>
+              <h3>Applications open</h3>
+              <p>
+                The Fall 2026 application is live. Submit the form with your background, interest,
+                and availability.
+              </p>
             </article>
-            <article class="timeline-step">
-              <div class="step-number">2</div>
-              <h3>Application Review &amp; Interviews - September 2026</h3>
-              <p>Candidate materials are reviewed and interview conversations are conducted.</p>
+            <article class="timeline-step" data-reveal data-reveal-delay="80">
+              <div class="step-number">02</div>
+              <h3>Applications close &mdash; September 6</h3>
+              <p>
+                The form closes end of day Sunday, September 6. Late submissions are not reviewed.
+              </p>
             </article>
-            <article class="timeline-step">
-              <div class="step-number">3</div>
-              <h3>Member Decisions Announced - Late September 2026</h3>
-              <p>Final outcomes are communicated with onboarding details for selected members.</p>
+            <article class="timeline-step" data-reveal data-reveal-delay="160">
+              <div class="step-number">03</div>
+              <h3>Review &amp; follow-up</h3>
+              <p>
+                Applications are reviewed after the deadline. Selected applicants are contacted by
+                email with a request for additional information.
+              </p>
+            </article>
+            <article class="timeline-step" data-reveal data-reveal-delay="240">
+              <div class="step-number">04</div>
+              <h3>Decisions &amp; onboarding</h3>
+              <p>
+                Outcomes are communicated directly, with onboarding details for incoming members.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-col">
+          <article class="panel" data-reveal>
+            <div class="eyebrow">Who Should Apply</div>
+            <h2>Students serious about private markets.</h2>
+            <p>
+              No prior finance experience is required. What matters is genuine interest and a
+              willingness to do the research, form a view, and defend it.
+            </p>
+            <ul>
+              <li>Students interested in private equity, growth equity, and venture capital</li>
+              <li>Anyone who wants repeated practice building and presenting an investment view</li>
+              <li>Students looking for a peer group that takes investing work seriously</li>
+              <li>All majors and class years are welcome to apply</li>
+            </ul>
+          </article>
+          <article class="panel" data-reveal data-reveal-delay="100">
+            <div class="eyebrow">How To Prepare</div>
+            <h2>Come with a point of view.</h2>
+            <p>
+              You do not need a polished pitch to apply, but having something you find genuinely
+              interesting makes the conversation far better.
+            </p>
+            <ul>
+              <li>Pick a sector you actually follow and know why it interests you</li>
+              <li>Be ready to talk through a company you find compelling, and why</li>
+              <li>Read our <a href="sectors.html"><strong>sector coverage</strong></a> to see how the club is organized</li>
+              <li>Questions? Email <a href="mailto:carolinabuyside@gmail.com"><strong>carolinabuyside@gmail.com</strong></a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Inside The Club</div>
+            <h2>What members actually do.</h2>
+          </div>
+          <div class="cards-3">
+            <article class="prog-card" data-reveal>
+              <h3>Structured learning</h3>
+              <p>
+                Onboarding covers private markets fundamentals, frameworks, and the vocabulary
+                members need before diving into company work.
+              </p>
+            </article>
+            <article class="prog-card" data-reveal data-reveal-delay="90">
+              <h3>Company pitches &amp; sector work</h3>
+              <p>
+                Members build and present investment views, then defend them in structured,
+                feedback-driven discussion with the group.
+              </p>
+            </article>
+            <article class="prog-card" data-reveal data-reveal-delay="180">
+              <h3>A career-focused community</h3>
+              <p>
+                Programming connects members with alumni and professionals already working across
+                buy-side and banking roles.
+              </p>
             </article>
           </div>
         </div>
@@ -436,50 +478,110 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-head">
-            <div class="eyebrow">Application Info</div>
-            <h2>How to prepare before applications open.</h2>
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Questions</div>
+            <h2>Before you apply</h2>
           </div>
-          <div class="cards-3">
-            <article class="prog-card">
-              <h3>Who should apply</h3>
-              <p>
-                Students serious about buy-side careers in private equity, growth equity, and
-                venture capital who want repeated practice in research and discussion.
-              </p>
-            </article>
-            <article class="prog-card">
-              <h3>How to prepare now</h3>
-              <p>
-                Build familiarity with public-to-private pitches, follow a sector of interest, and be
-                ready to explain your investment thinking clearly in writing and conversation.
-              </p>
-            </article>
-            <article class="prog-card">
-              <h3>Where updates are posted</h3>
-              <p>
-                Recruiting announcements, timelines, and next steps are shared through LinkedIn and
-                direct responses to club email inquiries.
-              </p>
-            </article>
+          <div class="faq" data-reveal>
+            <details>
+              <summary>Do I need prior finance experience?</summary>
+              <div class="faq-body">
+                No. Onboarding starts from private markets fundamentals, so no coursework or
+                internship background is assumed. What matters is that you are willing to do the
+                research, form a view, and defend it when someone pushes back.
+              </div>
+            </details>
+            <details>
+              <summary>What majors and class years can apply?</summary>
+              <div class="faq-body">
+                All majors and all class years. Members come in with different backgrounds and the
+                sector structure is designed to let people start wherever they are.
+              </div>
+            </details>
+            <details>
+              <summary>Is there a resume drop or a coffee chat requirement?</summary>
+              <div class="faq-body">
+                Neither. There is one application form and one deadline. You do not need to have
+                spoken to anyone in the club beforehand, and reaching out early is not scored.
+              </div>
+            </details>
+            <details>
+              <summary>What happens after I submit?</summary>
+              <div class="faq-body">
+                The form closes end of day Sunday, September 6. Applications are reviewed after
+                the deadline, selected applicants are contacted by email, and every applicant is
+                told their outcome once decisions are made.
+              </div>
+            </details>
+            <details>
+              <summary>What happens if I&rsquo;m selected?</summary>
+              <div class="faq-body">
+                We will reach out by email to request some additional information. Keep an eye on
+                the inbox you applied with, and check your spam folder if you have not heard
+                anything once decisions go out.
+              </div>
+            </details>
+            <details>
+              <summary>Do I pick a sector when I join?</summary>
+              <div class="faq-body">
+                Yes. New members choose one of our six coverage areas during onboarding. Prior
+                knowledge of that industry is not required &mdash; a reason you want to follow it is.
+              </div>
+            </details>
+            <details>
+              <summary>How do I get updates before then?</summary>
+              <div class="faq-body">
+                Recruiting announcements go out through
+                <a href="https://www.linkedin.com/company/carolinabuyside/" target="_blank" rel="noreferrer"><strong>LinkedIn</strong></a>.
+                For anything not answered here, email
+                <a href="mailto:carolinabuyside@gmail.com"><strong>carolinabuyside@gmail.com</strong></a>
+                and we will get back to you.
+              </div>
+            </details>
           </div>
         </div>
       </section>
+
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <div class="eyebrow">Ready</div>
+            <h2>Applications close Sunday, September 6.</h2>
+            <p>
+              One form, no resume drop, all majors and class years. If you are on the fence, apply
+              &mdash; the conversation is the low-cost way to find out whether this is for you.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-accent" href="https://lnkd.in/e6Gw8-Ka" target="_blank" rel="noreferrer">
+                Apply now <span class="arr" aria-hidden="true">&rarr;</span>
+              </a>
+              <a class="btn btn-outline-light" href="about.html">Learn about the club</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer">
       <div class="container footer-top">
         <div class="footer-brand">
           <h3>Carolina BuySide</h3>
-          <p class="footer-tag">Carolina BuySide at UNC-Chapel Hill</p>
-          <p class="footer-subtag">Club Partner with <a href="https://www.perplexity.ai/" target="_blank" rel="noreferrer"><strong>Perplexity</strong></a></p>
+          <p class="footer-tag">Founded 2025 at UNC-Chapel Hill.</p>
+          <p class="footer-subtag">
+            Club Partner with
+            <a href="https://www.perplexity.ai/" target="_blank" rel="noreferrer">
+              <strong>&nbsp;Perplexity</strong>
+            </a>
+          </p>
         </div>
         <div class="footer-links footer-nav">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="sectors.html">Sectors</a>
           <a href="team.html">Team</a>
-          <a href="join.html">Join</a>
+          <a href="join.html">Apply</a>
         </div>
         <div class="footer-links footer-contact">
           <a
@@ -495,8 +597,39 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        <div>© 2026 Carolina BuySide. Built for recruiting and programming.</div>
+        <div>&copy; 2026 Carolina BuySide. Built for recruiting and programming.</div>
       </div>
     </footer>
+
+    <script src="assets/site.js?v=20260826t"></script>
+    <script>
+      /* Days remaining until the application deadline (end of day, Sept 6 2026). */
+      (function () {
+        var el = document.getElementById("days-left");
+        var label = document.getElementById("days-label");
+        if (!el) return;
+
+        var deadline = new Date(2026, 8, 6, 23, 59, 59); // month is 0-indexed
+        var now = new Date();
+        // floor, so "11" means 11 more days after today rather than counting today twice
+        var days = Math.floor((deadline - now) / 86400000);
+
+        if (days > 1) {
+          el.textContent = days;
+          label.textContent = "Days to apply";
+        } else if (days === 1) {
+          el.textContent = "1";
+          label.textContent = "Day to apply";
+        } else if (days === 0) {
+          el.textContent = "Today";
+          el.style.fontSize = "2.4rem";
+          label.textContent = "Final day to apply";
+        } else {
+          el.textContent = "Closed";
+          el.style.fontSize = "2.4rem";
+          label.textContent = "Applications closed";
+        }
+      })();
+    </script>
   </body>
 </html>
